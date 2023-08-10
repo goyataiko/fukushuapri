@@ -16,11 +16,6 @@ class ContactController extends Controller
     }
 
     public function store(FormSubmissionRequest $request){
-        $this -> validate($request,[
-            'name' => 'required|min:2',
-            'gender' => 'required'
-        ]); 
-
         Contact::create([
             'name' => $request -> get('name'),
             'gender' => $request -> get('gender')
