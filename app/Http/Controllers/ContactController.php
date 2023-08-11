@@ -23,4 +23,10 @@ class ContactController extends Controller
 
         return redirect('/contacts')->with('success','컨텍트가 작성됨');
     }
+
+    public function show(Contact $contact){
+        dd($contact);
+
+        return view('.contact.show', compact('contact')); //라우터 name과 연동
+    }
 }

@@ -19,4 +19,6 @@ Route::get('/', function () {
 });
 
 Route::get('/contacts', [ContactController::class, 'index']);
+Route::get('/contacts/{contact}', [ContactController::class, 'show'])->name('contact.show');
+
 Route::post('/contacts/store', [ContactController::class, 'store'])->name('contact.store');
