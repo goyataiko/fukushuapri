@@ -23,3 +23,5 @@ Route::get('/contacts/{contact}', [ContactController::class, 'show'])->name('con
 
 Route::post('/contacts/store', [ContactController::class, 'store'])->name('contact.store');
 Route::post('/file/upload', [ContactController::class, 'upload'])->name('file.upload');
+
+Route::get('/posts', [ContactController::class, 'posts']);

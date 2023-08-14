@@ -5,6 +5,8 @@ use Illuminate\Http\Request;
 use App\Models\Contact;
 use App\Http\Requests\FormSubmissionRequest;
 use App\Models\Image;
+use App\Models\User;
+use App\Models\Post;
 
 class ContactController extends Controller
 {
@@ -46,5 +48,10 @@ class ContactController extends Controller
             ]);
             return back();
         }
+    }
+
+    public function posts(){
+        $post = Post::find(1);
+        return $post->user;
     }
 }
