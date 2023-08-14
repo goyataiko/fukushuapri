@@ -39,3 +39,16 @@
         </select>
     <button type="submit">submit</button>
 </form>
+
+<form action="{{ route('file.upload') }}" method="POST" enctype="multipart/form-data">@csrf
+    <input type="file" name="avatar">
+    <button type="submit">submit</button>
+
+    @if($errors -> has('avatar'))
+        <p>{{$errors->first('avatar')}}</p>
+    @endif
+</form>
+
+@foreach($images as $image)
+<img src="{{Storage::url($image->image)}}" width='180px'>
+@endforeach
