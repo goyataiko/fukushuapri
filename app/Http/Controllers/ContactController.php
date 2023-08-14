@@ -53,7 +53,12 @@ class ContactController extends Controller
     }
 
     public function posts(){
-        $post = Post::find(1);
-        return $post->user;
+        $user = User::find(1);
+        // posts: 유저의 함수
+        $user->posts()->create([
+            'title'=>'this is title by Relationship'
+        ]);
+
+        return "Post Created";
     }
 }
